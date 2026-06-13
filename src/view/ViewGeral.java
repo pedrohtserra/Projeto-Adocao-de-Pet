@@ -1,10 +1,6 @@
 package view;
 
-import controller.ClienteController;
-import controller.FuncionarioController;
-import controller.PetController;
-import controller.ProdutoController;
-import controller.FornecedorController;
+import controller.*;
 import util.Logger;
 import java.util.Scanner;
 
@@ -17,17 +13,22 @@ public class ViewGeral {
         FuncionarioController funcController = new FuncionarioController();
         ProdutoController produtoController = new ProdutoController();
         FornecedorController fornController = new FornecedorController();
+        BanhoTosaController banhoTosaController = new BanhoTosaController();
+        VeterinarioController veterinarioController = new VeterinarioController();
 
         Logger.registrar("Sistema iniciado.");
         int opcao = 0;
 
-        while (opcao != 5) {
+        while (opcao != 7) {
             System.out.println("\n=== SISTEMA DE ADOÇÃO DE PETS ===");
             System.out.println("1. Menu Funcionário");
             System.out.println("2. Menu Cliente");
             System.out.println("3. Menu Estoque");
             System.out.println("4. Menu Fornecedores");
-            System.out.println("5. Sair");
+            System.out.println("5. Menu Veterinario");
+            System.out.println("6. Menu Banho e Tosa");
+            System.out.println("7. Sair");
+
             System.out.print("Escolha o seu perfil: ");
 
             opcao = scanner.nextInt();
@@ -41,6 +42,11 @@ public class ViewGeral {
                 ViewProduto.menu(scanner, produtoController);
             } else if (opcao == 4) {
                 ViewFornecedor.menu(scanner, fornController);
+            } else if (opcao == 5) {
+                ViewVeterinario.menu(scanner, veterinarioController);
+            }else if(opcao == 6){
+                ViewBanhoTosa.menu(scanner , banhoTosaController , petController);
+
             }
         }
 
