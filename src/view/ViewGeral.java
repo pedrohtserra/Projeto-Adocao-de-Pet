@@ -17,11 +17,12 @@ public class ViewGeral {
         VeterinarioController veterinarioController = new VeterinarioController();
         ConsultaVacinaController consultaVacinaController = new ConsultaVacinaController();
         AdocaoController adocaoController = new AdocaoController();
+        DoacaoFinanceiraController doacaoFinanceiraController = new DoacaoFinanceiraController();
 
         Logger.registrar("Sistema iniciado.");
-        int opcao = 0;
+        int opcao = -1;
 
-        while (opcao != 9) {
+        while (opcao != 0) {
             System.out.println("\n=== SISTEMA DE ADOÇÃO DE PETS ===");
             System.out.println("1. Menu Funcionário");
             System.out.println("2. Menu Cliente");
@@ -31,7 +32,8 @@ public class ViewGeral {
             System.out.println("6. Menu Banho e Tosa");
             System.out.println("7. Menu Consultas e Vacinas");
             System.out.println("8. Menu Adocoes");
-            System.out.println("9. Sair");
+            System.out.println("9. Menu Doaçao Financeira");
+            System.out.println("0. Sair");
 
             System.out.print("Escolha o seu perfil: ");
 
@@ -54,6 +56,8 @@ public class ViewGeral {
                 ViewConsultaVacina.menu(scanner, consultaVacinaController, petController);
             } else if (opcao == 8) {
                 ViewAdocao.menu(scanner, adocaoController, petController, clienteController);
+            } else if (opcao == 9) {
+                ViewDoacaoFinanceira.menu(scanner, doacaoFinanceiraController);
             }
         }
 
