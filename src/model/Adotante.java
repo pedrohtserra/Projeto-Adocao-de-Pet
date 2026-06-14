@@ -1,10 +1,10 @@
 package model;
 
-public class Cliente extends Pessoa {
+public class Adotante extends Pessoa {
     private static final long serialVersionUID = 1L;
     private String telefone;
 
-    public Cliente(String nome, String cpf, String telefone) {
+    public Adotante(String nome, String cpf, String telefone) {
         super(nome, cpf);
         this.telefone = telefone;
     }

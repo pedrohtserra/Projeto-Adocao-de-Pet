@@ -1,10 +1,10 @@
 package model;
 
-public class Funcionario extends Pessoa {
+public class Colaborador extends Pessoa {
     private static final long serialVersionUID = 1L;
     private String cargo;
 
-    public Funcionario(String nome, String cpf, String cargo) {
+    public Colaborador(String nome, String cpf, String cargo) {
         super(nome, cpf);
         this.cargo = cargo;
     }

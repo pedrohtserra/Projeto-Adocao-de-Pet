@@ -1,15 +1,15 @@
 package view;
 
-import controller.ClienteController;
+import controller.AdotanteController;
 import controller.PetController;
-import model.Cliente;
+import model.Adotante;
 import java.util.Scanner;
 
-public class ViewCliente {
-    public static void menu(Scanner scanner, PetController petController, ClienteController clienteController) {
+public class ViewAdotante {
+    public static void menu(Scanner scanner, PetController petController, AdotanteController adotanteController) {
         int opcao = 0;
         while (opcao != 2) {
-            System.out.println("\n--- Área do Cliente ---");
+            System.out.println("\n--- Área do Adotante ---");
             System.out.println("1. Cadastrar-se");
             System.out.println("2. Voltar");
             System.out.print("Escolha: ");
@@ -24,8 +24,8 @@ public class ViewCliente {
                 System.out.print("Telefone: ");
                 String tel = scanner.nextLine();
 
-                clienteController.cadastrar(new Cliente(nome, cpf, tel));
-                System.out.println("Cliente cadastrado com sucesso!");
+                adotanteController.cadastrar(new Adotante(nome, cpf, tel));
+                System.out.println("Adotante cadastrado com sucesso!");
 
             } else if (opcao == 2) {
                 System.out.println("Voltando ao menu principal...");
