@@ -9,8 +9,8 @@ public class ViewGeral {
         Scanner scanner = new Scanner(System.in);
 
         PetController petController = new PetController();
-        ClienteController clienteController = new ClienteController();
-        FuncionarioController funcController = new FuncionarioController();
+        AdotanteController adotanteController = new AdotanteController();
+        ColaboradorController colaboradorController = new ColaboradorController();
         ProdutoController produtoController = new ProdutoController();
         FornecedorController fornController = new FornecedorController();
         BanhoTosaController banhoTosaController = new BanhoTosaController();
@@ -23,8 +23,8 @@ public class ViewGeral {
 
         while (opcao != 9) {
             System.out.println("\n=== SISTEMA DE ADOÇÃO DE PETS ===");
-            System.out.println("1. Menu Funcionário");
-            System.out.println("2. Menu Cliente");
+            System.out.println("1. Menu Colaborador");
+            System.out.println("2. Menu Adotante");
             System.out.println("3. Menu Estoque");
             System.out.println("4. Menu Fornecedores");
             System.out.println("5. Menu Veterinario");
@@ -39,9 +39,9 @@ public class ViewGeral {
             scanner.nextLine();
 
             if (opcao == 1) {
-                ViewFuncionario.menu(scanner, petController, funcController);
+                ViewColaborador.menu(scanner, petController, colaboradorController);
             } else if (opcao == 2) {
-                ViewCliente.menu(scanner, petController, clienteController);
+                ViewAdotante.menu(scanner, petController, adotanteController);
             } else if (opcao == 3) {
                 ViewProduto.menu(scanner, produtoController);
             } else if (opcao == 4) {
@@ -53,7 +53,7 @@ public class ViewGeral {
             } else if (opcao == 7) {
                 ViewConsultaVacina.menu(scanner, consultaVacinaController, petController);
             } else if (opcao == 8) {
-                ViewAdocao.menu(scanner, adocaoController, petController, clienteController);
+                ViewAdocao.menu(scanner, adocaoController, petController, adotanteController);
             }
         }
 

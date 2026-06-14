@@ -1,18 +1,18 @@
 package view;
 
-import controller.FuncionarioController;
+import controller.ColaboradorController;
 import controller.PetController;
 import model.Cachorro;
-import model.Funcionario;
+import model.Colaborador;
 import model.Gato;
 import java.util.Scanner;
 
-public class ViewFuncionario {
-    public static void menu(Scanner scanner, PetController petController, FuncionarioController funcController) {
+public class ViewColaborador {
+    public static void menu(Scanner scanner, PetController petController, ColaboradorController colaboradorController) {
         int opcao = 0;
         while (opcao != 4) {
-            System.out.println("\n--- Área do Funcionário ---");
-            System.out.println("1. Cadastrar Novo Funcionário");
+            System.out.println("\n--- Área do Colaborador ---");
+            System.out.println("1. Cadastrar Novo Colaborador");
             System.out.println("2. Cadastrar Cachorro");
             System.out.println("3. Cadastrar Gato");
             System.out.println("4. Voltar");
@@ -23,13 +23,13 @@ public class ViewFuncionario {
             switch (opcao) {
                 case 1:
                     System.out.print("Nome: ");
-                    String nomeFunc = scanner.nextLine();
+                    String nomeColaborador = scanner.nextLine();
                     System.out.print("CPF: ");
-                    String cpfFunc = scanner.nextLine();
+                    String cpfColaborador = scanner.nextLine();
                     System.out.print("Cargo: ");
                     String cargo = scanner.nextLine();
-                    funcController.cadastrar(new Funcionario(nomeFunc, cpfFunc, cargo));
-                    System.out.println("Funcionário cadastrado!");
+                    colaboradorController.cadastrar(new Colaborador(nomeColaborador, cpfColaborador, cargo));
+                    System.out.println("Colaborador cadastrado!");
                     break;
                 case 2:
                 case 3:

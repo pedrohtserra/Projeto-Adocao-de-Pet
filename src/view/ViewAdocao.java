@@ -1,18 +1,19 @@
 package view;
 
 import controller.AdocaoController;
-import controller.ClienteController;
+import controller.AdotanteController;
 import controller.PetController;
 import model.Adocao;
+import model.Adotante;
 import model.Animal;
-import model.Cliente;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ViewAdocao {
     public static void menu(Scanner scanner, AdocaoController adocaoController,
-                            PetController petController, ClienteController clienteController) {
+                            PetController petController, AdotanteController adotanteController) {
         int opcao = 0;
         while (opcao != 6) {
             System.out.println("\n--- Gerenciamento de Adocoes ---");
@@ -28,7 +29,7 @@ public class ViewAdocao {
 
             switch (opcao) {
                 case 1:
-                    registrarAdocao(scanner, adocaoController, petController, clienteController);
+                    registrarAdocao(scanner, adocaoController, petController, adotanteController);
                     break;
                 case 2:
                     listarTodos(adocaoController);
@@ -52,7 +53,7 @@ public class ViewAdocao {
     }
 
     private static void registrarAdocao(Scanner scanner, AdocaoController adocaoController,
-                                        PetController petController, ClienteController clienteController) {
+                                        PetController petController, AdotanteController adotanteController) {
         System.out.print("ID da adocao: ");
         int id = scanner.nextInt();
         scanner.nextLine();
@@ -73,16 +74,16 @@ public class ViewAdocao {
             return;
         }
 
-        System.out.print("CPF do cliente: ");
+        System.out.print("CPF do adotante: ");
         String cpf = scanner.nextLine();
 
-        Cliente cliente = clienteController.buscarPorCpf(cpf);
-        if (cliente == null) {
-            System.out.println("Cliente nao encontrado. Cadastre o cliente primeiro.");
+        Adotante adotante = adotanteController.buscarPorCpf(cpf);
+        if (adotante == null) {
+            System.out.println("Adotante nao encontrado. Cadastre o adotante primeiro.");
             return;
         }
 
-        Adocao adocao = new Adocao(id, idPet, pet.getNome(), cpf, cliente.getNome(), LocalDate.now());
+        Adocao adocao = new Adocao(id, idPet, pet.getNome(), cpf, adotante.getNome(), LocalDate.now());
         adocaoController.cadastrar(adocao);
         pet.setCpfDono(cpf);
         petController.atualizar(idPet, pet);

@@ -43,7 +43,7 @@ public class Adocao implements Serializable {
     public String toString() {
         return "ID: " + id +
                 " | Pet: " + nomePet + " (" + idPet + ")" +
-                " | Cliente: " + nomeCliente + " | CPF: " + cpfCliente +
+                " | Adotante: " + nomeCliente + " | CPF: " + cpfCliente +
                 " | Data: " + data +
                 " | Status: " + (ativa ? "Ativa" : "Cancelada");
     }
