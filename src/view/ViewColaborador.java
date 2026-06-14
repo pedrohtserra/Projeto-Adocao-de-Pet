@@ -44,8 +44,6 @@ public class ViewColaborador {
         }
     }
 
-    // ==================== SUBMENU COLABORADORES ====================
-
     private static void menuColaboradores(Scanner scanner, ColaboradorController colaboradorController) {
         int opcao = -1;
         while (opcao != 0) {
@@ -99,7 +97,6 @@ public class ViewColaborador {
         System.out.print("CPF: ");
         String cpf = scanner.nextLine();
 
-        // Verifica CPF duplicado buscando na lista
         for (Colaborador c : colaboradorController.listar()) {
             if (c.getCpf().equals(cpf)) {
                 System.out.println("Já existe um colaborador cadastrado com esse CPF.");
@@ -198,8 +195,6 @@ public class ViewColaborador {
             System.out.println("Colaborador não encontrado.");
         }
     }
-
-    // ==================== SUBMENU PETS ====================
 
     private static void menuPets(Scanner scanner, PetController petController) {
         int opcao = -1;
