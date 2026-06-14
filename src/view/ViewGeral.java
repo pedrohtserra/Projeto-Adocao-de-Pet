@@ -33,14 +33,19 @@ public class ViewGeral {
             System.out.println("6. Menu Banho e Tosa");
             System.out.println("7. Menu Consultas e Vacinas");
             System.out.println("8. Menu Adocoes");
-            System.out.println("9. Menu Doaçao Financeira");
+            System.out.println("9. Menu Doação Financeira");
             System.out.println("10. Menu Avaliacao");
             System.out.println("0. Sair");
-
             System.out.print("Escolha o seu perfil: ");
 
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println("Opção inválida! Digite apenas números.");
+                scanner.nextLine();
+                continue;
+            }
 
             if (opcao == 1) {
                 ViewColaborador.menu(scanner, petController, colaboradorController);
@@ -52,8 +57,8 @@ public class ViewGeral {
                 ViewFornecedor.menu(scanner, fornController);
             } else if (opcao == 5) {
                 ViewVeterinario.menu(scanner, veterinarioController);
-            }else if(opcao == 6){
-                ViewBanhoTosa.menu(scanner , banhoTosaController , petController);
+            } else if (opcao == 6) {
+                ViewBanhoTosa.menu(scanner, banhoTosaController, petController);
             } else if (opcao == 7) {
                 ViewConsultaVacina.menu(scanner, consultaVacinaController, petController);
             } else if (opcao == 8) {
@@ -62,6 +67,8 @@ public class ViewGeral {
                 ViewDoacaoFinanceira.menu(scanner, doacaoFinanceiraController);
             } else if (opcao == 10) {
                 ViewAvaliacao.menu(scanner, avaliacaoController);
+            } else if (opcao != 0) {
+                System.out.println("Opção inválida!");
             }
         }
 
