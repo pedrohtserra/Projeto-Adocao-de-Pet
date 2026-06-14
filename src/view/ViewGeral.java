@@ -18,6 +18,7 @@ public class ViewGeral {
         ConsultaVacinaController consultaVacinaController = new ConsultaVacinaController();
         AdocaoController adocaoController = new AdocaoController();
         DoacaoFinanceiraController doacaoFinanceiraController = new DoacaoFinanceiraController();
+        AvaliacaoController avaliacaoController = new AvaliacaoController();
 
         Logger.registrar("Sistema iniciado.");
         int opcao = -1;
@@ -33,6 +34,7 @@ public class ViewGeral {
             System.out.println("7. Menu Consultas e Vacinas");
             System.out.println("8. Menu Adocoes");
             System.out.println("9. Menu Doaçao Financeira");
+            System.out.println("10. Menu Avaliacao");
             System.out.println("0. Sair");
 
             System.out.print("Escolha o seu perfil: ");
@@ -58,6 +60,8 @@ public class ViewGeral {
                 ViewAdocao.menu(scanner, adocaoController, petController, adotanteController);
             } else if (opcao == 9) {
                 ViewDoacaoFinanceira.menu(scanner, doacaoFinanceiraController);
+            } else if (opcao == 10) {
+                ViewAvaliacao.menu(scanner, avaliacaoController);
             }
         }
 
