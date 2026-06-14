@@ -50,7 +50,7 @@ public class ViewGeral {
             if (opcao == 1) {
                 ViewColaborador.menu(scanner, petController, colaboradorController);
             } else if (opcao == 2) {
-                ViewAdotante.menu(scanner, petController, adotanteController);
+                ViewAdotante.menu(scanner, adotanteController);
             } else if (opcao == 3) {
                 ViewProduto.menu(scanner, produtoController);
             } else if (opcao == 4) {

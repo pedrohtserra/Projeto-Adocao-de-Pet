@@ -1,13 +1,12 @@
 package view;
 
 import controller.AdotanteController;
-import controller.PetController;
 import model.Adotante;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ViewAdotante {
-    public static void menu(Scanner scanner, PetController petController, AdotanteController adotanteController) {
+    public static void menu(Scanner scanner, AdotanteController adotanteController) {
         int opcao = 0;
         while (opcao != 5) {
             System.out.println("\n--- Área do Adotante ---");
